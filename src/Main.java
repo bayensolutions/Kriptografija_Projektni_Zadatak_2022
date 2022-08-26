@@ -71,6 +71,7 @@ public class Main {
                 break;
             }
         }
+        // nova promjena
         Cryptography.generateCertificate(username, password);
         Files.write(of, (username + "@" + getHash(username, password) + "\n").getBytes(), StandardOpenOption.APPEND);
     }
