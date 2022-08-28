@@ -133,9 +133,8 @@ public class Main {
                         new Quiz().startQuiz(username, participationsLeft);
                         int newParticipations = participationsLeft-1;
                         System.out.println("NEW PARTICIPATIONS LEFT: "+newParticipations);
-                        replaceLine(USERS_PATH, rightLine, rightLine.replace("@" + participationsLeft, "@" + newParticipations));
+                        Cryptography.replaceLine(USERS_PATH, rightLine, rightLine.replace("@" + participationsLeft, "@" + newParticipations));
                         if (newParticipations == 0) {
-                            System.out.println("DOSLI SMO DO REVOKE CERTIFICATE");
                             Cryptography.revokeCertificate(username);
                         }
                         isExit = true;
@@ -150,20 +149,6 @@ public class Main {
                         System.out.println("You chose non-existent option. Select 1, 2 or 3.");
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void replaceLine(String filePath, String originalLineText, String newLineText) {
-        Path path = Paths.get(filePath);
-        // Get all the lines
-        try (Stream<String> stream = Files.lines(path, StandardCharsets.UTF_8)) {
-            // Do the line replace
-            List<String> list = stream.map(line -> line.equals(originalLineText) ? newLineText : line)
-                    .collect(Collectors.toList());
-            // Write the content back
-            Files.write(path, list, StandardCharsets.UTF_8);
         } catch (IOException e) {
             e.printStackTrace();
         }

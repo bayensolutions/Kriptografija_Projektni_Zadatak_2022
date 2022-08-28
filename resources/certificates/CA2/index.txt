@@ -1,1 +1,4 @@
-V	230828114714Z		01	unknown	/C=BA/ST=RS/O=Elektrotehnicki fakultet/OU=UNIBL/CN=korisnik1
+R	230828185602Z	220828212956Z,cessationOfOperation	01	unknown	/C=BA/ST=RS/O=Elektrotehnicki fakultet/OU=UNIBL/CN=korisnik1
+R	230828185703Z	220828210400Z,cessationOfOperation	02	unknown	/C=BA/ST=RS/O=Elektrotehnicki fakultet/OU=UNIBL/CN=korisnik2
+R	230828185715Z	220828210833Z,cessationOfOperation	03	unknown	/C=BA/ST=RS/O=Elektrotehnicki fakultet/OU=UNIBL/CN=korisnik3
+R	230828185726Z	220828212718Z,cessationOfOperation	04	unknown	/C=BA/ST=RS/O=Elektrotehnicki fakultet/OU=UNIBL/CN=korisnik4
