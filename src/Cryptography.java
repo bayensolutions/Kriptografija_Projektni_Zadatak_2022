@@ -63,6 +63,7 @@ public class Cryptography {
 
     public static void revokeCertificate(String username) {
         try {
+            //anzthing
             if (checkValidity("resources/certificates/CA1/index.txt", username)) {
                 changeContentOfIndexFile("resources/certificates/CA1/index.txt", username);
                 executeCommand("openssl ca -gencrl -out resources/certificates/CA1/crl/crl.pem -config resources/certificates/CA1/openssl.cnf");
