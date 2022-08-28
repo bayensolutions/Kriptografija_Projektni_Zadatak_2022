@@ -1,0 +1,106 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 2 (0x2)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=BA, ST=RS, O=ETF, CN=CA1/emailAddress=ca1@mail.com
+        Validity
+            Not Before: Aug 28 11:48:23 2022 GMT
+            Not After : Aug 28 11:48:23 2023 GMT
+        Subject: C=BA, ST=RS, O=Elektrotehnicki fakultet, OU=UNIBL, CN=korisnik3
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (4096 bit)
+                Modulus:
+                    00:c5:43:69:99:f6:8c:f6:10:90:58:be:58:f8:9a:
+                    7b:a7:9b:0a:f1:33:77:ad:e5:a5:e4:58:5b:a5:01:
+                    58:23:d0:2e:13:df:b4:a0:d0:b2:ed:eb:9c:5f:cc:
+                    33:f9:13:78:46:06:1e:7d:2d:55:a2:d9:dc:9a:48:
+                    8e:0a:b4:f6:73:b7:5a:dd:08:11:64:0a:0b:7a:01:
+                    73:f4:1b:45:67:e5:44:ef:ae:05:31:19:d2:75:d3:
+                    a5:55:b4:56:66:7e:c5:6f:d4:98:1e:86:5d:53:8e:
+                    c1:75:5a:26:fd:88:56:10:c5:5e:db:c2:a4:79:08:
+                    f0:9f:5f:22:40:14:db:1d:ba:a6:a7:0b:ad:96:1d:
+                    d0:a5:6d:f9:02:79:03:cc:6f:fd:d3:4e:8b:7d:07:
+                    33:25:a5:b2:6b:e1:8f:d3:69:0e:46:0d:54:81:e0:
+                    87:56:26:9b:4c:8f:4c:86:4e:bb:43:c2:8c:59:4c:
+                    d6:89:22:c7:d2:a9:b1:62:79:10:21:83:77:05:8b:
+                    91:49:15:e4:6b:de:b3:55:f6:fa:dd:46:de:a6:da:
+                    db:c0:66:1f:3d:1d:95:93:9e:bb:7a:ed:ae:ad:57:
+                    a4:a7:10:39:4d:d2:72:7c:43:ad:8a:90:9e:31:cc:
+                    b0:f1:47:26:59:af:81:fe:e4:7c:ae:a8:74:cb:37:
+                    fb:9b:c1:5a:1e:d1:ed:35:bd:1a:7f:fa:02:f4:00:
+                    5f:78:35:53:a2:00:43:b1:3c:20:ea:14:6e:ac:30:
+                    10:7f:da:79:40:7f:31:54:19:6e:db:8f:92:8f:a5:
+                    26:41:4e:18:85:a2:55:f3:5f:9d:b1:6d:56:53:c3:
+                    c7:04:a6:2b:30:47:54:59:c7:d5:cf:55:7a:da:86:
+                    4b:48:bc:bb:55:a7:42:31:db:8d:44:ed:7e:c7:9c:
+                    9f:07:1d:55:20:05:d2:8c:29:e0:0d:d4:f4:95:20:
+                    97:59:9a:14:4a:fb:55:25:7a:2a:db:ae:da:45:96:
+                    ad:76:1d:ed:5a:59:e6:76:5f:71:84:0c:55:c3:06:
+                    33:0c:80:69:3d:78:6b:d4:a8:51:a1:5d:50:b2:28:
+                    37:eb:46:6d:a2:ca:cd:b0:07:cb:dd:6c:26:3a:b4:
+                    8f:68:90:32:64:16:95:97:7a:ef:94:f2:69:58:06:
+                    60:eb:7b:f5:70:4c:cf:7a:e2:a7:74:04:1a:e5:1c:
+                    32:0e:02:bb:ff:37:83:47:5c:f8:52:55:c2:d7:52:
+                    dd:ec:23:96:2c:db:2a:14:05:19:e5:9a:4a:d6:a7:
+                    7d:f3:b4:4e:f0:54:0a:14:5f:99:36:aa:da:c6:e8:
+                    d1:a0:ec:88:0a:d8:dd:4f:34:66:29:24:32:48:02:
+                    0b:85:f3
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: 
+                Digital Signature, Non Repudiation, Key Encipherment, Data Encipherment, Encipher Only
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                CD:D6:1D:08:49:B3:F6:A4:A4:8A:F3:36:7B:BF:2B:9C:57:7A:A9:99
+            X509v3 Authority Key Identifier: 
+                46:33:DC:50:85:A9:74:41:36:14:40:D1:E4:08:E7:1A:CD:24:19:DC
+    Signature Algorithm: sha256WithRSAEncryption
+    Signature Value:
+        3a:6b:77:f5:a7:af:0c:c1:75:6e:0a:96:24:89:6e:5a:c1:e4:
+        27:a2:a0:b9:75:b0:c9:96:64:f0:21:f8:a3:f2:26:30:36:80:
+        f4:95:b6:9d:1f:f5:16:8e:e7:d9:31:0a:5d:85:9c:c1:f1:6b:
+        f1:09:9c:08:39:d3:93:db:89:c3:e0:18:b0:ef:9d:ba:49:f8:
+        b9:4e:42:c9:78:40:dd:04:a6:48:a8:1d:e2:1e:19:14:47:44:
+        23:d5:69:51:c2:11:be:81:71:60:74:85:92:36:b1:1b:c8:00:
+        f7:62:60:45:3f:ae:59:0c:2a:63:f0:31:74:da:c0:52:2e:35:
+        4e:2c:48:29:c2:79:f2:ae:04:5b:64:a2:3c:df:7f:35:d3:c3:
+        88:aa:e7:41:6d:93:02:01:46:5a:a7:65:c6:f6:a8:4a:1d:88:
+        42:b8:13:4e:15:1e:08:2d:2c:6b:95:87:00:5a:61:15:a7:1a:
+        f2:6c:cb:d0:04:c3:15:49:de:c9:03:31:bb:1c:0c:20:2a:1f:
+        37:b8:cc:1b:d0:b5:31:1a:38:d1:47:3e:6d:42:9c:0b:9d:bd:
+        0c:ae:e8:c9:31:95:87:d1:db:8c:c5:2a:ac:f3:c1:41:6c:2b:
+        e9:97:48:98:a1:47:8d:c3:68:9f:e4:3a:33:fe:1d:55:0d:a5:
+        52:02:5d:b8
+-----BEGIN CERTIFICATE-----
+MIIEuTCCA6GgAwIBAgIBAjANBgkqhkiG9w0BAQsFADBTMQswCQYDVQQGEwJCQTEL
+MAkGA1UECAwCUlMxDDAKBgNVBAoMA0VURjEMMAoGA1UEAwwDQ0ExMRswGQYJKoZI
+hvcNAQkBFgxjYTFAbWFpbC5jb20wHhcNMjIwODI4MTE0ODIzWhcNMjMwODI4MTE0
+ODIzWjBhMQswCQYDVQQGEwJCQTELMAkGA1UECAwCUlMxITAfBgNVBAoMGEVsZWt0
+cm90ZWhuaWNraSBmYWt1bHRldDEOMAwGA1UECwwFVU5JQkwxEjAQBgNVBAMMCWtv
+cmlzbmlrMzCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAMVDaZn2jPYQ
+kFi+WPiae6ebCvEzd63lpeRYW6UBWCPQLhPftKDQsu3rnF/MM/kTeEYGHn0tVaLZ
+3JpIjgq09nO3Wt0IEWQKC3oBc/QbRWflRO+uBTEZ0nXTpVW0VmZ+xW/UmB6GXVOO
+wXVaJv2IVhDFXtvCpHkI8J9fIkAU2x26pqcLrZYd0KVt+QJ5A8xv/dNOi30HMyWl
+smvhj9NpDkYNVIHgh1Ymm0yPTIZOu0PCjFlM1okix9KpsWJ5ECGDdwWLkUkV5Gve
+s1X2+t1G3qba28BmHz0dlZOeu3rtrq1XpKcQOU3ScnxDrYqQnjHMsPFHJlmvgf7k
+fK6odMs3+5vBWh7R7TW9Gn/6AvQAX3g1U6IAQ7E8IOoUbqwwEH/aeUB/MVQZbtuP
+ko+lJkFOGIWiVfNfnbFtVlPDxwSmKzBHVFnH1c9VetqGS0i8u1WnQjHbjUTtfsec
+nwcdVSAF0owp4A3U9JUgl1maFEr7VSV6Ktuu2kWWrXYd7VpZ5nZfcYQMVcMGMwyA
+aT14a9SoUaFdULIoN+tGbaLKzbAHy91sJjq0j2iQMmQWlZd675TyaVgGYOt79XBM
+z3rip3QEGuUcMg4Cu/83g0dc+FJVwtdS3ewjlizbKhQFGeWaStanffO0TvBUChRf
+mTaq2sbo0aDsiArY3U80ZikkMkgCC4XzAgMBAAGjgYkwgYYwCQYDVR0TBAIwADAL
+BgNVHQ8EBAMCAPEwLAYJYIZIAYb4QgENBB8WHU9wZW5TU0wgR2VuZXJhdGVkIENl
+cnRpZmljYXRlMB0GA1UdDgQWBBTN1h0ISbP2pKSK8zZ7vyucV3qpmTAfBgNVHSME
+GDAWgBRGM9xQhal0QTYUQNHkCOcazSQZ3DANBgkqhkiG9w0BAQsFAAOCAQEAOmt3
+9aevDMF1bgqWJIluWsHkJ6KguXWwyZZk8CH4o/ImMDaA9JW2nR/1Fo7n2TEKXYWc
+wfFr8QmcCDnTk9uJw+AYsO+dukn4uU5CyXhA3QSmSKgd4h4ZFEdEI9VpUcIRvoFx
+YHSFkjaxG8gA92JgRT+uWQwqY/AxdNrAUi41TixIKcJ58q4EW2SiPN9/NdPDiKrn
+QW2TAgFGWqdlxvaoSh2IQrgTThUeCC0sa5WHAFphFaca8mzL0ATDFUneyQMxuxwM
+ICofN7jMG9C1MRo40Uc+bUKcC529DK7oyTGVh9HbjMUqrPPBQWwr6ZdImKFHjcNo
+n+Q6M/4dVQ2lUgJduA==
+-----END CERTIFICATE-----

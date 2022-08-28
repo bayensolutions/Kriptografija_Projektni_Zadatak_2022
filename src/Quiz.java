@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -57,11 +59,14 @@ public class Quiz {
         System.out.println("D) " + array[list.get(3)]);
     }
 
-    public void startQuiz(String user) {
+    public void startQuiz(String user, int participationsLeft) {
+        System.out.println("WELCOME TO QUIZ!");
+        System.out.println("Attempts remaining: " + --participationsLeft);
         for (int i = 0; i < 5; i++) {
             selectQuestion();
         }
         exportResults(user, correctAnswersCounter);
+        System.out.println("Your score: " + correctAnswersCounter + "/5");
         correctAnswersCounter = 0;
         serialNumber = 0;
         for (int number = 0; number < 20; number++) {
@@ -71,7 +76,8 @@ public class Quiz {
 
     public static void selectQuestion() {
         int number = (int) (Math.random() * 20);
-        Scanner scanner = new Scanner(System.in);;
+        Scanner scanner = new Scanner(System.in);
+        ;
         String answer;
         if (arrayNumbers[number] == 0) {
             System.out.println(++serialNumber + ". pitanje: ");
@@ -98,11 +104,26 @@ public class Quiz {
 
     public void exportResults(String user, int correctAnswers) {
         try {
-            Files.write(Paths.get(Main.resultsPath), (user + "\t" + LocalDate.now() + "\t" + LocalTime.now() + "\t" + correctAnswers + "\n").getBytes(), StandardOpenOption.APPEND);
-            System.out.println("Uspjesan ispis.");
+            Files.write(Paths.get(Main.RESULTS_PATH), (user + "\t" + LocalDate.now() + "\t" + LocalTime.now() + "\t" + correctAnswers + "\n").getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             System.out.println("Neuspjesan ispis.");
             e.printStackTrace();
         }
+    }
+
+    public static void showResults(String resultsPath) {
+        System.out.println("QUIZ RESULTS:");
+        System.out.println("=============================================");
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(resultsPath));
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("=============================================");
     }
 }

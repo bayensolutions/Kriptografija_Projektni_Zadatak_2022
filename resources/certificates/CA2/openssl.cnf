@@ -42,7 +42,7 @@ default_ca	= CA_default		# The default ca section
 ####################################################################
 [ CA_default ]
 
-dir		= .		# Where everything is kept
+dir		= ./resources/certificates/CA2		# Where everything is kept
 certs		= $dir/certs		# Where the issued certs are kept
 crl_dir		= $dir/crl		# Where the issued crl are kept
 database	= $dir/index.txt	# database index file.
@@ -50,12 +50,12 @@ database	= $dir/index.txt	# database index file.
 					# several certs with same subject.
 new_certs_dir	= $dir/newcerts		# default place for new certs.
 
-certificate	= $dir/ca2.pem 	# The CA certificate
+certificate	= $dir/CA2.pem 	# The CA certificate
 serial		= $dir/serial 		# The current serial number
 crlnumber	= $dir/crlnumber	# the current crl number
 					# must be commented out to leave a V1 CRL
 crl		= $dir/crl.pem 		# The current CRL
-private_key	= $dir/private/ca2.key# The private key
+private_key	= $dir/private/CA2.key# The private key
 
 x509_extensions	= usr_cert		# The extensions to add to the cert
 
@@ -84,11 +84,11 @@ policy		= policy_match
 
 # For the CA policy
 [ policy_match ]
-countryName		= match
-stateOrProvinceName	= match
-organizationName	= match
+countryName		= optional
+stateOrProvinceName	= optional
+organizationName	= optional
 organizationalUnitName	= optional
-commonName		= supplied
+commonName		= optional
 emailAddress		= optional
 
 # For the 'anything' policy
@@ -100,13 +100,13 @@ stateOrProvinceName	= optional
 localityName		= optional
 organizationName	= optional
 organizationalUnitName	= optional
-commonName		= supplied
+commonName		= optional
 emailAddress		= optional
 
 ####################################################################
 [ req ]
 default_bits		= 2048
-default_keyfile 	= private/ca2.key
+default_keyfile 	= private/CA2.key
 distinguished_name	= req_distinguished_name
 attributes		= req_attributes
 x509_extensions	= v3_ca	# The extensions to add to the self signed cert

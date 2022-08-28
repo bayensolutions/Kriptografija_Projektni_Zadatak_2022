@@ -5,7 +5,6 @@ import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-
 class Steganography {
 
 	public static void encode(File carrier, String payload, File stegoFile) {
