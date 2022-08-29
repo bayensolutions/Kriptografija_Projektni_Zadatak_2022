@@ -18,6 +18,7 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Quiz.hideQuestions();
         createMenu();
+
     }
 
     public static void createMenu() throws Exception {
@@ -79,7 +80,6 @@ public class Main {
 
     public static void login() {
         Scanner entry = new Scanner(System.in);
-
         System.out.print("Input username: ");
         String username = entry.nextLine();
         System.out.print("Input password: ");

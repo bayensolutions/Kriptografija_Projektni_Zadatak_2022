@@ -3,8 +3,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.security.cert.X509Certificate;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -63,7 +61,6 @@ public class Cryptography {
 
     public static void revokeCertificate(String username) {
         try {
-            //anzthing
             if (checkValidity("resources/certificates/CA1/index.txt", username)) {
                 changeContentOfIndexFile("resources/certificates/CA1/index.txt", username);
                 executeCommand("openssl ca -gencrl -out resources/certificates/CA1/crl/crl.pem -config resources/certificates/CA1/openssl.cnf");

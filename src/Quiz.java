@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
@@ -16,6 +17,8 @@ public class Quiz {
     public static String QUESTIONS_PATH = "resources/questions/";
     public static String IMAGES_PATH = "resources/images/";
 
+    public static final String password="sigurnost";
+
     public static int[] arrayNumbers = new int[20];
     public static int serialNumber = 0;
     public static int correctAnswersCounter = 0;
@@ -28,16 +31,31 @@ public class Quiz {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         int number = 0;
-        for (String question : questions) {
-            number++;
-            Steganography.encode(new File(IMAGES_PATH + number + ".bmp"), question,
-                    new File(QUESTIONS_PATH + number + ".bmp"));
+        try {
+            for (String question : questions) {
+                String encodedQuestion= AES.encrypt(question,password);
+                //System.out.println(encodedQuestion);
+                number++;
+                Steganography.encode(new File(IMAGES_PATH + number + ".bmp"), encodedQuestion,
+                        new File(QUESTIONS_PATH + number + ".bmp"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public static String showQuestion(int number) {
-        String[] array = Steganography.decode(new File(QUESTIONS_PATH + (number + 1) + ".bmp")).split("#");
+        AES aes_ =new AES();
+        String[] array = new String[0];
+        try {
+            String encryptedQuestion=Steganography.decode(new File(QUESTIONS_PATH + (number + 1) + ".bmp"));
+            String decryptedQuestion= AES.decrypt(encryptedQuestion,password);
+            array = decryptedQuestion.split("#");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         String rightAnswer = null;
         System.out.println(array[0]);
         if (number < 10) {
@@ -77,7 +95,6 @@ public class Quiz {
     public static void selectQuestion() {
         int number = (int) (Math.random() * 20);
         Scanner scanner = new Scanner(System.in);
-        ;
         String answer;
         if (arrayNumbers[number] == 0) {
             System.out.println(++serialNumber + ". pitanje: ");
@@ -104,7 +121,8 @@ public class Quiz {
 
     public void exportResults(String user, int correctAnswers) {
         try {
-            Files.write(Paths.get(Main.RESULTS_PATH), (user + "\t" + LocalDate.now() + "\t" + LocalTime.now() + "\t" + correctAnswers + "\n").getBytes(), StandardOpenOption.APPEND);
+            String contentToEncrypt=user + "\t" + LocalDate.now() + "\t" + LocalTime.now() + "\t" + correctAnswers + "\n";
+            Files.write(Paths.get(Main.RESULTS_PATH),AES.encrypt(contentToEncrypt,password).getBytes() , StandardOpenOption.APPEND);
         } catch (IOException e) {
             System.out.println("Neuspjesan ispis.");
             e.printStackTrace();
@@ -116,11 +134,8 @@ public class Quiz {
         System.out.println("=============================================");
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader(resultsPath));
-            String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-            }
+            String wholeContent=Files.readString(Path.of(resultsPath));
+            System.out.print(AES.decrypt(wholeContent,password));
         } catch (IOException e) {
             e.printStackTrace();
         }
