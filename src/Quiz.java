@@ -17,7 +17,7 @@ public class Quiz {
     public static String QUESTIONS_PATH = "resources/questions/";
     public static String IMAGES_PATH = "resources/images/";
 
-    public static final String password="sigurnost";
+    public static final String password = "sigurnost";
 
     public static int[] arrayNumbers = new int[20];
     public static int serialNumber = 0;
@@ -35,7 +35,7 @@ public class Quiz {
         int number = 0;
         try {
             for (String question : questions) {
-                String encodedQuestion= AES.encrypt(question,password);
+                String encodedQuestion = AES.encrypt(question, password);
                 //System.out.println(encodedQuestion);
                 number++;
                 Steganography.encode(new File(IMAGES_PATH + number + ".bmp"), encodedQuestion,
@@ -47,11 +47,11 @@ public class Quiz {
     }
 
     public static String showQuestion(int number) {
-        AES aes_ =new AES();
+        AES aes_ = new AES();
         String[] array = new String[0];
         try {
-            String encryptedQuestion=Steganography.decode(new File(QUESTIONS_PATH + (number + 1) + ".bmp"));
-            String decryptedQuestion= AES.decrypt(encryptedQuestion,password);
+            String encryptedQuestion = Steganography.decode(new File(QUESTIONS_PATH + (number + 1) + ".bmp"));
+            String decryptedQuestion = AES.decrypt(encryptedQuestion, password);
             array = decryptedQuestion.split("#");
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,8 +121,8 @@ public class Quiz {
 
     public void exportResults(String user, int correctAnswers) {
         try {
-            String contentToEncrypt=user + "\t" + LocalDate.now() + "\t" + LocalTime.now() + "\t" + correctAnswers + "\n";
-            Files.write(Paths.get(Main.RESULTS_PATH),AES.encrypt(contentToEncrypt,password).getBytes() , StandardOpenOption.APPEND);
+            String contentToEncrypt = String.format("%s %s %s %d\n", user, LocalDate.now(), LocalTime.now(), correctAnswers);
+            Files.write(Paths.get(Main.RESULTS_PATH), AES.encrypt(contentToEncrypt, password).getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             System.out.println("Neuspjesan ispis.");
             e.printStackTrace();
@@ -132,10 +132,9 @@ public class Quiz {
     public static void showResults(String resultsPath) {
         System.out.println("QUIZ RESULTS:");
         System.out.println("=============================================");
-        BufferedReader br = null;
         try {
-            String wholeContent=Files.readString(Path.of(resultsPath));
-            System.out.print(AES.decrypt(wholeContent,password));
+            String wholeContent = Files.readString(Path.of(resultsPath));
+            System.out.print(AES.decrypt(wholeContent, password));
         } catch (IOException e) {
             e.printStackTrace();
         }
